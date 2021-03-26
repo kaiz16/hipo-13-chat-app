@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <!-- If user is not logged in authenticate first -->
-    <Authenticate v-if="isLoggedIn === false" />
+    <Authenticate
+      v-if="isLoggedIn === false"
+      v-on:loggedIn="isLoggedIn = true"
+    ></Authenticate>
+    
     <!-- else show chats -->
     <div class="main" v-else>
-      <Chats />
-      <SendMessage />
+      <Chats></Chats>
+      <SendMessage></SendMessage>
     </div>
   </div>
 </template>
@@ -18,7 +22,7 @@ export default {
   name: "App",
   data() {
     return {
-      isLoggedIn: false,
+      isLoggedIn: false, // is flag to check for authentication
     };
   },
   components: {
@@ -29,4 +33,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #edf1f5;
+  width: 100%;
+  height: 100%;
+}
+</style>
