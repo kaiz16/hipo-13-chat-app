@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- If user is not logged in authenticate first -->
+    <Authenticate v-if="isLoggedIn === false" />
+    <!-- else show chats -->
+    <div class="main" v-else>
+      <Chats />
+      <SendMessage />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Authenticate from "./components/Authenticate.vue";
+import Chats from "./components/Chats.vue";
+import SendMessage from "./components/SendMessage.vue";
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      isLoggedIn: false,
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    Authenticate,
+    Chats,
+    SendMessage,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

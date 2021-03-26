@@ -1,4 +1,5 @@
 # hipo-13-chat-app
+Backend api for this app - https://github.com/kaiz16/chat-app-no-auth/tree/master/backend
 
 ## Project setup
 ```
