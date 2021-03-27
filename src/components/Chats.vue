@@ -1,10 +1,12 @@
 <template>
   <div class="wrapper">
     <div class="message" v-for="message in messages" v-bind:key="message._id">
-      <!-- how to use font-awwesome in Vue?? -->
-      <!-- import '@fortawesome/fontawesome-free/css/all.css' -->
-      <div style="width: 10vw" class="fa fa-user-circle fa-3x"></div>
-      <div style="width: 90vw">
+      <div class="leftColumn">
+        <div class="userIcon">
+          img
+        </div>
+      </div>
+      <div class="rightColumn">
         <div class="chatLog">
           <b>{{ message.username }}</b>
           <i>{{ message.created_at }}</i>
@@ -44,16 +46,31 @@ export default {
 <style>
 .message {
   display: flex;
-  margin-bottom: 20px;
+}
+.leftColumn {
+  width:10vw; 
+}
+.rightColumn {
+  width: 90vw;
+  margin-left:10px;
+  margin-bottom:15px;
 }
 .chatLog {
   display: flex;
   justify-content: space-between;
 }
 .chatBubble {
-  padding:10px;
-  border:1px solid black;
-  border-radius: 5px  20px 20px;
+  background: white;
+  padding:15px;
+  border: none;
+  border-radius: 5px 20px 20px;
+}
+.userIcon{
+  background: pink;
+  border-radius:50%;
+  height: 40px;
+  width: 40px;
+  float:right;
 }
 p {
   margin: 0;
