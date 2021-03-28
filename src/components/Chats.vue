@@ -2,9 +2,7 @@
   <div class="wrapper">
     <div class="message" v-for="message in messages" v-bind:key="message._id">
       <div class="leftColumn">
-        <div class="userIcon">
-          img
-        </div>
+        <div class="userIcon">img</div>
       </div>
       <div class="rightColumn">
         <div class="chatLog">
@@ -48,12 +46,19 @@ export default {
   display: flex;
 }
 .leftColumn {
-  width:10vw; 
+  width: 10%;
 }
 .rightColumn {
-  width: 90vw;
-  margin-left:10px;
-  margin-bottom:15px;
+  width: 90%;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+.userIcon {
+  background: pink;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  float: right;
 }
 .chatLog {
   display: flex;
@@ -61,18 +66,16 @@ export default {
 }
 .chatBubble {
   background: white;
-  padding:15px;
+  padding: 15px;
   border: none;
   border-radius: 5px 20px 20px;
 }
-.userIcon{
-  background: pink;
-  border-radius:50%;
-  height: 40px;
-  width: 40px;
-  float:right;
-}
 p {
   margin: 0;
+}
+@media only screen and (min-width: 1000px) {
+  .leftColumn {
+    width: 5%;
+  }
 }
 </style>
